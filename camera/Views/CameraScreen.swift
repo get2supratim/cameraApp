@@ -333,7 +333,7 @@ private struct HistogramOverlay: View {
                 let x = size.width * CGFloat(index) / CGFloat(bars)
                 let height = size.height * CGFloat((sin(Double(index) * 0.62) + 1.25) / 2.4)
                 let rect = CGRect(x: x, y: size.height - height, width: size.width / CGFloat(bars) - 2, height: height)
-                let color: Color = mode == .rgb ? [.red, .green, .blue][index % 3].opacity(0.72) : .white.opacity(0.72)
+                let color: Color = mode == .rgb ? [Color.red, Color.green, Color.blue][index % 3].opacity(0.72) : Color.white.opacity(0.72)
                 context.fill(Path(roundedRect: rect, cornerRadius: 1), with: .color(color))
             }
         }
